@@ -31,7 +31,7 @@ const RecipeList = () => {
     <div className='foodlistcontainer'>
         <h1>Search Your Recipes</h1>
         <div className='searchrecipeinput'>
-        <input type='text' placeholder='enter dish' onChange={(e)=> setValue(e.target.value)} />
+        <input type='text' placeholder='Search your Recipes..' onChange={(e)=> setValue(e.target.value)} />
         <button onClick={searchdish}>Search</button>
         </div>
         <h2>Recipe For: {dish}</h2>
@@ -39,8 +39,10 @@ const RecipeList = () => {
             {receipes.map((dish)=>(
                 <div className='receipescontaiiner'> 
                 <img src={dish.image_url} alt="" />
-                <h3>{dish.title}</h3>
-                <h5>{dish.publisher}</h5>
+                
+                <h4>{dish.title}</h4>
+                {/* <h4>{dish}</h4> */}
+                <h6>{dish.publisher}</h6>
                 <div className="btn">
                     <Link to={`/recipes/${dish.recipe_id}`} >
                         <button className='detailsbtn'>Details</button>
